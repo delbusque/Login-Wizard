@@ -1,0 +1,113 @@
+.landing-cont {
+    width: 1442px;
+    height: 900px;
+    background: #FFFFFF;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.landing-title {
+    width: 238px;
+    height: 34px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 140.62%;
+    color: #333333;
+    margin: auto;
+    margin-top: 21px;
+}
+
+.landing-desc {
+    width: 284px;
+    height: 28px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 155%;
+    color: #8181A5;
+    margin: auto;
+    margin-top: 18px;
+}
+
+.new-user-container {
+    width: 495px;
+    height: 193px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-shadow: 1px 4px 40px 2px rgba(129, 129, 165, 0.07);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    margin-top: 25px;
+}
+
+
+.new-user-container img {
+    height: 53.125px;
+    width: 62.51811981201172px;
+    margin-left: 56px;
+    margin-right: 44px;
+}
+
+.new-user-container p,
+.existing-user-container p {
+    padding-bottom: 12px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 150%;
+}
+
+.new-user-container button {
+    background: #001B36;
+    color: #FFFFFF;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.89px;
+    text-transform: uppercase;
+    height: 45px;
+    width: 274px;
+    vertical-align: middle;
+    cursor: pointer;
+    align-items: center;
+}
+
+.existing-user-container {
+    width: 495px;
+    height: 193px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-shadow: 1px 4px 40px 2px rgba(129, 129, 165, 0.07);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    margin-top: 28px;
+}
+
+.existing-user-container img {
+    height: 63.154449462890625px;
+    width: 62.5px;
+    left: 6.25px;
+    margin-left: 56px;
+    margin-right: 44px;
+}
+
+.existing-user-container button {
+    background: #001B36;
+    color: #FFFFFF;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.89px;
+    text-transform: uppercase;
+    height: 45px;
+    width: 274px;
+    align-items: center;
+    border-radius: 5px;
+    vertical-align: middle;
+    cursor: pointer;
+}
