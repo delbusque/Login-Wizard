@@ -1,0 +1,33 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    width: 119px;
+    height: 42px;
+    margin-left: 40px;
+    margin-top: 22px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 140.62%;
+}
+
+.header-help {
+    margin-right: 40px;
+    margin-top: 22px;
+    padding-top: 6px;
+    padding-bottom: 7.5px;
+    padding-left: 28px;
+    padding-right: 28px;
+    background: #FEBD2C;
+    border-radius: 4px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.89px;
+    text-transform: uppercase;
+    color: #333333;
+}
