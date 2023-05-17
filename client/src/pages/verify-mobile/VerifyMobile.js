@@ -4,10 +4,12 @@ import arrowLeft from '../../images/arrow-left1.png';
 import mobileAndroid from '../../images/mobile-android-alt1.png';
 
 import styles from './VerifyMobile.module.css';
+import SiteWrappper from '../../components/SiteWrapper/SiteWrappper';
 
 const VerifyMobile = () => {
     return (
-        <div className={styles['verify-container']}>
+        <SiteWrappper>
+
             <Header />
             <Card />
 
@@ -21,8 +23,7 @@ const VerifyMobile = () => {
 
             <p className={styles['redirect']}>Send verification code on email</p>
 
-
-        </div>
+        </SiteWrappper>
     )
 }
 

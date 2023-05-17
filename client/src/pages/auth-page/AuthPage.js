@@ -2,11 +2,11 @@ import Header from '../../components/Header/Header';
 import styles from './AuthPage.module.css';
 import arrowLeft from '../../images/arrow-left1.png';
 import mobileAndroid from '../../images/mobile-android-alt1.png';
+import SiteWrappper from '../../components/SiteWrapper/SiteWrappper';
 
 const AuthPage = () => {
     return (
-        <div className={styles['auth-container']}>
-
+        <SiteWrappper>
             <Header />
 
             <h3 className={styles['auth-title']}>Welcome to Website</h3>
@@ -35,7 +35,7 @@ const AuthPage = () => {
                 <button>Continue</button>
             </form>
 
-        </div>
+        </SiteWrappper>
     )
 }
 
