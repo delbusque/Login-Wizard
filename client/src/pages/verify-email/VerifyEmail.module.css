@@ -1,0 +1,71 @@
+.title {
+    position: absolute;
+    width: 295px;
+    height: 34px;
+    left: 572px;
+    top: 100px;
+    /* H3 / Bold */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 140.62%;
+    /* identical to box height, or 34px */
+    color: #000000;
+}
+
+.desc {
+    position: absolute;
+    width: 312px;
+    height: 54px;
+    left: 565px;
+    top: 176px;
+    /* H5 / Regular */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25.6px;
+    /* or 28px */
+    text-align: center;
+    color: #000000;
+}
+
+.desc span {
+    color: #6D2BC1;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.card-arrow {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    left: 503px;
+    top: 200px;
+}
+
+.card-envelope {
+    position: absolute;
+    width: 57.5px;
+    height: 46px;
+    left: 686px;
+    top: 295px;
+}
+
+.redirect {
+    position: absolute;
+    width: 281px;
+    height: 26px;
+    left: 580px;
+    top: 616px;
+    /* Body Text / Default / Bold */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 160%;
+    /* identical to box height, or 26px */
+    /* Primary 1 */
+    color: #6D2BC1;
+}
