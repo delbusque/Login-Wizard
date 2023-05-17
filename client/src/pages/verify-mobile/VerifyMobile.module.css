@@ -1,4 +1,4 @@
-.title-number {
+.title {
     position: absolute;
     width: 307px;
     height: 34px;
@@ -14,12 +14,12 @@
     color: #000000;
 }
 
-.desc-number {
+.desc {
     position: absolute;
     width: 312px;
     height: 56px;
     left: 564px;
-    top: 174px;
+    top: 176px;
 
     /* H5 / Regular */
 
@@ -35,7 +35,7 @@
     color: #000000;
 }
 
-.desc-number span {
+.desc span {
     color: #6D2BC1;
     font-weight: 500;
 }

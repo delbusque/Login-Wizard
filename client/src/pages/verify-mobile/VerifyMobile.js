@@ -13,11 +13,11 @@ const VerifyMobile = () => {
             <Header />
             <Card />
 
-            <h3 className={styles['title-number']}>Verify your mobile number</h3>
+            <h3 className={styles['title']}>Verify your mobile number</h3>
 
             <img src={arrowLeft} alt='arrow' className={styles['card-arrow']} />
 
-            <h5 className={styles['desc-number']}>A 6-digit code has been sent as a text messge to <span>+1 900-00-1234</span></h5>
+            <h5 className={styles['desc']}>A 6-digit code has been sent as a text messge to <span>+1 900-00-1234</span></h5>
 
             <img src={mobileAndroid} alt='mobile-phone' className={styles['card-phone']} />
 
