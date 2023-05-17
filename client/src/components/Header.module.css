@@ -1,33 +1,52 @@
 .header-container {
-    display: flex;
-    justify-content: space-between;
+    position: relative;
+    width: 1440px;
+    height: 900px;
+    background: #FFFFFF;
+    margin: 0 auto;
     align-items: center;
 }
 
 .header-logo {
+    position: absolute;
     width: 119px;
     height: 42px;
-    margin-left: 40px;
-    margin-top: 22px;
+    left: 40px;
+    top: 22px;
+
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 30px;
     line-height: 140.62%;
+    /* or 42px */
+    color: #000000;
 }
 
 .header-help {
-    margin-right: 40px;
-    margin-top: 22px;
-    padding-top: 6px;
-    padding-bottom: 7.5px;
-    padding-left: 28px;
-    padding-right: 28px;
-    background: #FEBD2C;
-    border-radius: 4px;
+    position: absolute;
+    width: 175px;
+    height: 45px;
+    left: 1225px;
+    top: 21px;
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
+    line-height: 0px;
+    /* identical to box height, or 0% */
+    display: flex;
+    align-items: center;
+    text-align: center;
     letter-spacing: 0.89px;
     text-transform: uppercase;
+    /* Gray 1 */
     color: #333333;
+    background: #FEBD2C;
+    border-radius: 4px;
+}
+
+.help-text {
+    position: absolute;
+    left: 20%;
 }

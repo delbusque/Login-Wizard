@@ -4,8 +4,11 @@ const Header = () => {
     return (
         <div className={styles['header-container']}>
             <div className={styles['header-logo']}>Website</div>
-            <div className={styles['header-help']}>NEED HELP?</div>
+            <div className={styles['header-help']}>
+                <div className={styles['help-text']}>NEED HELP?</div>
+            </div>
         </div>
+
     )
 }
 
