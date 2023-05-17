@@ -1,4 +1,4 @@
-import Header from '../../components/Header';
+import Header from '../../components/Header/Header';
 import styles from './AuthPage.module.css';
 import arrowLeft from '../../images/arrow-left1.png';
 import mobileAndroid from '../../images/mobile-android-alt1.png';
@@ -10,6 +10,7 @@ const AuthPage = () => {
             <Header />
 
             <h3 className={styles['auth-title']}>Welcome to Website</h3>
+
             <div className={styles['auth-card']}></div>
             <div className={styles['card-progress']}></div>
             <div className={styles['progress']}></div>

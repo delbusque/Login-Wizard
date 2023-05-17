@@ -1,7 +1,7 @@
 import styles from './LandingPage.module.css';
 import newUser from '../../images/new-user.png';
 import existingUser from '../../images/existing-user.png';
-import Header from '../../components/Header';
+import Header from '../../components/Header/Header';
 
 
 const LandingPage = () => {
