@@ -30,7 +30,7 @@ const AuthPage = () => {
                 <input className={styles['input-mobile']} placeholder='Enter your mobile no.'></input>
 
                 <label className={styles['label-email']}>Email Address</label>
-                <input className={styles['input-email']} placeholder='Enter your email id'></input>
+                <input type="email" className={styles['input-email']} placeholder='Enter your email id'></input>
 
                 <button>Continue</button>
             </form>
