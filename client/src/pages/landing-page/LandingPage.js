@@ -3,11 +3,20 @@ import newUser from '../../images/new-user.png';
 import existingUser from '../../images/existing-user.png';
 import Header from '../../components/Header/Header';
 
+import { useNavigate } from 'react-router-dom';
+
 
 const LandingPage = () => {
+
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate('/auth');
+    };
+
+
     return (
         <div className={styles['landing-container']}>
-
             <Header />
 
             <h3 className={styles['landing-title']}>Welcome to Website</h3>
@@ -17,7 +26,7 @@ const LandingPage = () => {
                 <img src={newUser} alt='new-user' />
                 <div>
                     <p>I`m new user</p>
-                    <button>CREATE ACCOUNT</button>
+                    <button onClick={handleClick}>CREATE ACCOUNT</button>
                 </div>
             </div>
 
@@ -25,7 +34,7 @@ const LandingPage = () => {
                 <img src={existingUser} alt='new-user' />
                 <div>
                     <p>I have an account</p>
-                    <button>LOGIN NOW</button>
+                    <button onClick={handleClick}>LOGIN NOW</button>
                 </div>
             </div>
         </div>
