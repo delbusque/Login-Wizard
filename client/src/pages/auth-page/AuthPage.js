@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import Header from '../../components/Header/Header';
 import styles from './AuthPage.module.css';
 import arrowLeft from '../../images/arrow-left1.png';
@@ -5,13 +7,27 @@ import mobileAndroid from '../../images/mobile-android-alt1.png';
 import SiteWrappper from '../../components/SiteWrapper/SiteWrappper';
 
 const AuthPage = () => {
+
+    const [mobileNo, setMobileNo] = useState('');
+    const [email, setEmail] = useState('');
+    const [isError, setIsError] = useState(false);
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+        setIsError(false);
+
+        if (!mobileNo || !email) {
+            setIsError(true);
+        }
+    }
+
     return (
         <SiteWrappper>
             <Header />
 
             <h3 className={styles['auth-title']}>Welcome to Website</h3>
 
-            <div className={styles['auth-card']}></div>
+            <div className={isError ? styles['auth-card-error'] : styles['auth-card']}></div>
             <div className={styles['card-progress']}></div>
             <div className={styles['progress']}></div>
 
@@ -22,17 +38,24 @@ const AuthPage = () => {
 
             <img src={mobileAndroid} alt='mobile-phone' className={styles['card-phone']} />
 
-            <p className={styles['card-terms']}>By signing up, I agree to the <span>Privacy Policy</span> & <span>Terms of Use</span></p>
+            <p className={isError ? styles['card-terms-error'] : styles['card-terms']}>
+                By signing up, I agree to the <span>Privacy Policy</span> & <span>Terms of Use</span></p>
 
-            <form className={styles['card-form']}>
+            <form className={styles['card-form']} onSubmit={submitHandler}>
 
                 <label className={styles['label-mobile']}>Mobile no.</label>
-                <input className={styles['input-mobile']} placeholder='Enter your mobile no.'></input>
+                <input className={(isError && !mobileNo) ? styles['input-mobile-error'] : styles['input-mobile']} placeholder='Enter your mobile no.'
+                    onChange={(e) => setMobileNo(e.target.value)} value={mobileNo}></input>
 
                 <label className={styles['label-email']}>Email Address</label>
-                <input type="email" className={styles['input-email']} placeholder='Enter your email id'></input>
+                <input className={(isError && !email) ? styles['input-email-error'] : styles['input-email']} placeholder='Enter your email id'
+                    onChange={(e) => setEmail(e.target.value)} value={email}></input>
 
-                <button>Continue</button>
+                {isError && <div className={styles['alert']}>
+                    <p>Please enter your mobile no. and email id</p>
+                </div>}
+
+                <button className={isError ? styles['button-error'] : styles['button']}>Continue</button>
             </form>
 
         </SiteWrappper>
