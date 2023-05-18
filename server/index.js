@@ -22,6 +22,18 @@ app.use(cookieParser());
 
 app.use(express.json());
 
+app.post('/verify-mobile', (req, res) => {
+    const { code } = req.body;
+    const { userSession } = req.session;
+
+    if (code !== userSession.code) {
+        return res.status(400).json({ mssg: 'Wrong code !' })
+    }
+
+    return res.status(200).json({ mssg: 'Verification successful !' })
+})
+
+
 app.post('/auth', (req, res) => {
     const { mobileNo, email } = req.body;
 

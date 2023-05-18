@@ -39,20 +39,30 @@
     height: 20px;
     left: 548px;
     top: 399px;
-
-    /* Label */
-
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
     font-size: 13px;
     line-height: 150%;
-    /* identical to box height, or 20px */
-
     letter-spacing: 0.03em;
     text-transform: uppercase;
-
     color: #000000;
+}
+
+.label-code-error {
+    position: absolute;
+    width: 136px;
+    height: 20px;
+    left: 548px;
+    top: 399px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 150%;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #EB5757;
 }
 
 .input-code {

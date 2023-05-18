@@ -1,16 +1,34 @@
 import styles from './Card.module.css';
+import { useState } from 'react';
+import { useVerify } from '../../hooks/useVerify';
 
 const Card = () => {
+
+    const { verifyCode, error } = useVerify();
+
+    const [code, setCode] = useState('');
+
+    const verifyHandler = async (e) => {
+        e.preventDefault();
+
+        await verifyCode(code);
+    }
+
     return (
         <>
             <div className={styles['card']}></div>
             <div className={styles['card-progress']}></div>
             <div className={styles['progress']}></div>
 
-            <form className={styles['verification-form']}>
+            <form className={styles['verification-form']} onSubmit={verifyHandler}>
 
-                <label className={styles['label-code']}>Verification code</label>
-                <input className={styles['input-code']} placeholder='Enter 6-digit verification code here'></input>
+                {!error ?
+                    <label className={styles['label-code']}>Verification code</label>
+                    :
+                    <label className={styles['label-code-error']}>{error}</label>
+                }
+                <input className={styles['input-code']} placeholder='Enter 6-digit verification code here'
+                    onChange={(e) => setCode(e.target.value)} value={code} />
 
                 <button>Continue</button>
 
