@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import Header from '../../components/Header/Header';
 import styles from './AuthPage.module.css';
@@ -8,17 +9,40 @@ import SiteWrappper from '../../components/SiteWrapper/SiteWrappper';
 
 const AuthPage = () => {
 
+    const navigate = useNavigate();
+
     const [mobileNo, setMobileNo] = useState('');
     const [email, setEmail] = useState('');
     const [isError, setIsError] = useState(false);
+    const [isValidEmail, setIsValidEmail] = useState(true);
 
-    const submitHandler = (e) => {
+    const submitHandler = async (e) => {
         e.preventDefault();
-        setIsError(false);
 
         if (!mobileNo || !email) {
             setIsError(true);
+            return;
         }
+
+        const response = await fetch('/auth', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ mobileNo, email })
+        })
+
+        const result = await response.json();
+
+        if (!response.ok) {
+            setIsError(true);
+            if (result.mssg === 'Invalid email format !') setIsValidEmail(false);
+            return;
+        }
+
+        console.log(result.code);
+
+        navigate('/verify-mobile')
     }
 
     return (
@@ -48,7 +72,7 @@ const AuthPage = () => {
                     onChange={(e) => setMobileNo(e.target.value)} value={mobileNo}></input>
 
                 <label className={styles['label-email']}>Email Address</label>
-                <input className={(isError && !email) ? styles['input-email-error'] : styles['input-email']} placeholder='Enter your email id'
+                <input className={(isError && !email) || (!isValidEmail) ? styles['input-email-error'] : styles['input-email']} placeholder='Enter your email id'
                     onChange={(e) => setEmail(e.target.value)} value={email}></input>
 
                 {isError && <div className={styles['alert']}>
