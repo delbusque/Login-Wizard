@@ -27,7 +27,7 @@ export const useVerify = () => {
             setError(result.mssg);
             localStorage.removeItem('user');
             dispatch({ type: 'notLOGGED' });
-            navigate('/');
+            // navigate('/');
             return;
         }
 
