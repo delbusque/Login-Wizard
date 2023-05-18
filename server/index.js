@@ -30,7 +30,10 @@ app.post('/verify-mobile', (req, res) => {
         return res.status(400).json({ mssg: 'Wrong code !' })
     }
 
-    return res.status(200).json({ mssg: 'Verification successful !' })
+    return res.status(200).json({
+        user: userSession.email,
+        mssg: 'Verification successful !'
+    })
 })
 
 
