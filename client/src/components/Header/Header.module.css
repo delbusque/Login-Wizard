@@ -2,7 +2,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .header-logo {
@@ -31,4 +30,35 @@
     letter-spacing: 0.89px;
     text-transform: uppercase;
     color: #333333;
+}
+
+@media screen and (max-width:375px) {
+
+    .header-logo {
+        width: 83px;
+        height: 30px;
+        margin-left: 32px;
+        margin-top: 27px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 21px;
+        line-height: 140.62%;
+    }
+
+    .header-help {
+        margin-right: 32px;
+        margin-top: 25px;
+        padding-top: 6px;
+        padding-bottom: 7.5px;
+        padding-left: 20px;
+        padding-right: 20px;
+        background: #FEBD2C;
+        border-radius: 4px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        letter-spacing: 0.89px;
+        text-transform: uppercase;
+        color: #333333;
+    }
 }

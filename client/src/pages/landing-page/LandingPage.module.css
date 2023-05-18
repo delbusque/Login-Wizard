@@ -6,6 +6,8 @@
     align-items: center;
 }
 
+
+
 .landing-title {
     width: 238px;
     height: 34px;
@@ -74,6 +76,8 @@
     align-items: center;
 }
 
+
+
 .existing-user-container {
     width: 495px;
     height: 193px;
@@ -108,4 +112,113 @@
     align-items: center;
     border-radius: 5px;
     vertical-align: middle;
+}
+
+
+@media screen and (max-width:375px) {
+
+    .landing-container {
+        position: relative;
+        width: 375px;
+        height: 667px;
+    }
+
+    .landing-title {
+        position: absolute;
+        width: 209px;
+        height: 30px;
+        left: 92px;
+        top: 114px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 21px;
+        line-height: 140.62%;
+        color: #333333;
+    }
+
+    .landing-desc {
+        position: absolute;
+        width: 252px;
+        height: 26px;
+        left: 61px;
+        top: 150px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 160%;
+        color: #8181A5;
+    }
+
+    .new-user-container {
+        position: absolute;
+        width: 311px;
+        height: 128px;
+        left: 32px;
+        top: 201px;
+    }
+
+    .existing-user-container {
+        position: absolute;
+        width: 311px;
+        height: 128px;
+        left: 32px;
+        top: 354px;
+    }
+
+    .new-user-container img {
+        position: absolute;
+        width: 40px;
+        height: 35px;
+        left: -27px;
+        top: 45px;
+    }
+
+
+    .existing-user-container img {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        left: -27px;
+        top: 45px;
+    }
+
+    .new-user-container p,
+    .existing-user-container p {
+        position: absolute;
+        width: 195px;
+        height: 26px;
+        left: 92px;
+        top: 31px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 160%;
+        color: #333333;
+    }
+
+
+
+    .new-user-container button,
+    .existing-user-container button {
+        position: absolute;
+        width: 179px;
+        height: 32px;
+        left: 90px;
+        top: 67px;
+        border-radius: 5px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 0px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 0.89px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        padding-left: 27px;
+    }
 }

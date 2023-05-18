@@ -9,6 +9,7 @@ import VerificationSuccess from './pages/verification-success/VerificationSucces
 
 function App() {
   const user = JSON.parse(localStorage.getItem('user'));
+  console.log(user);
 
   return (
     <Routes>

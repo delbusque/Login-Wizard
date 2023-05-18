@@ -71,11 +71,7 @@
     height: 45px;
     left: 548px;
     top: 427px;
-    /* White- */
-
     background: #FFFFFF;
-    /* Gray 8 */
-
     border: 1px solid #B3B3C9;
     border-radius: 4px;
 }
@@ -147,16 +143,114 @@
     height: 20px;
     left: 711px;
     top: 589px;
-
-    /* Body Text / Small */
-
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 145%;
-    /* or 20px */
-
-
     color: #000000;
+}
+
+@media screen and (max-width:375px) {
+    .card {
+        position: absolute;
+        width: 375px;
+        height: 472px;
+        left: 0px;
+        top: 165px;
+    }
+
+    .card-progress {
+        position: absolute;
+        width: 375px;
+        height: 7px;
+        left: 0px;
+        top: 165px;
+    }
+
+    .progress {
+        position: absolute;
+        height: 7px;
+        width: 85px;
+        left: 0px;
+        top: 165px;
+        border-radius: 10px;
+        background: #6D2BC1;
+    }
+
+    .label-code {
+        position: absolute;
+        width: 136px;
+        height: 20px;
+        left: 32px;
+        top: 364px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 150%;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+    }
+
+    .label-code-error {
+        position: absolute;
+        width: 176px;
+        height: 20px;
+        left: 32px;
+        top: 364px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 150%;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: #EB5757;
+    }
+
+    .input-code {
+        position: absolute;
+        width: 310px;
+        height: 45px;
+        left: 32px;
+        top: 392px;
+    }
+
+    .verification-form button {
+        position: absolute;
+        width: 310px;
+        height: 45px;
+        left: 33px;
+        top: 457px;
+    }
+
+    .verification-form p:nth-of-type(1) {
+        position: absolute;
+        width: 258px;
+        height: 26px;
+        left: 58px;
+        top: 517px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 160%;
+        color: #333333;
+    }
+
+    .verification-form p:nth-of-type(2) {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 177px;
+        top: 549px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 145%;
+        color: #000000;
+    }
+
 }
