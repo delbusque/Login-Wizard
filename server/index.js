@@ -46,10 +46,9 @@ app.post('/auth', (req, res) => {
     });
 })
 
-mongoose.connect(process.env.MONGO_URI)
-    .then(() => {
-        app.listen(process.env.PORT, () => {
-            console.log(`Server is listening for requests on port ${process.env.PORT}...`)
-        })
-    })
-    .catch(error => console.log(error))
+
+
+
+app.listen(process.env.PORT, () => {
+    console.log(`Server is listening for requests on port ${process.env.PORT}...`)
+})
