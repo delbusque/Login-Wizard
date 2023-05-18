@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import Header from '../../components/Header/Header';
 import Card from '../../components/Card/Card';
 import arrowLeft from '../../images/arrow-left1.png';
@@ -21,8 +23,9 @@ const VerifyMobile = () => {
 
             <img src={mobileAndroid} alt='mobile-phone' className={styles['card-phone']} />
 
-            <p className={styles['redirect']}>Send verification code on email</p>
-
+            <Link to='/verify-email'>
+                <p className={styles['redirect']}>Send verification code on email</p>
+            </Link>
         </SiteWrappper>
     )
 }

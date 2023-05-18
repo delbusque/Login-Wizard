@@ -1,4 +1,7 @@
 import styles from './VerifyEmail.module.css';
+
+import { Link } from 'react-router-dom';
+
 import Header from '../../components/Header/Header';
 import Card from '../../components/Card/Card';
 import arrowLeft from '../../images/arrow-left1.png';
@@ -20,7 +23,7 @@ const VerifyEmail = () => {
 
             <img src={envelope} alt='envelope' className={styles['card-envelope']} />
 
-            <p className={styles['redirect']}>Send verification code on mobile no.</p>
+            <Link to='/verify-mobile'><p className={styles['redirect']}>Send verification code on mobile no.</p></Link>
         </SiteWrappper>
     )
 }
