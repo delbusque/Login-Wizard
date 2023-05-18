@@ -28,5 +28,5 @@ export const useVerify = () => {
         navigate('/success')
     }
 
-    return { verifyCode, error }
+    return { verifyCode, error, setError }
 }

@@ -4,12 +4,17 @@ import { useVerify } from '../../hooks/useVerify';
 
 const Card = () => {
 
-    const { verifyCode, error } = useVerify();
+    const { verifyCode, error, setError } = useVerify();
 
     const [code, setCode] = useState('');
 
     const verifyHandler = async (e) => {
         e.preventDefault();
+
+        if (!code || code.length < 6) {
+            setError('6-digit code needed !')
+            return;
+        }
 
         await verifyCode(code);
     }
