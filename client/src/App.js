@@ -8,8 +8,13 @@ import VerifyEmail from './pages/verify-email/VerifyEmail';
 import VerificationSuccess from './pages/verification-success/VerificationSuccess';
 
 function App() {
-  // const user = JSON.parse(localStorage.getItem('user'));
-  const { user } = useUserContext();
+
+  let { user } = useUserContext();
+  const localStorageUser = JSON.parse(localStorage.getItem('user'));
+
+  if (localStorageUser) {
+    user = localStorageUser;
+  }
   console.log(user);
 
   return (
