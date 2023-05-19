@@ -38,3 +38,30 @@
 .row-pencil {
   margin-right: 15px;
 }
+
+@media screen and (max-width: 375px) {
+  .table-row-cont {
+    display: grid;
+    grid-template-columns: 160px 60px 60px 80px;
+    width: 375px;
+    height: 87px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 1px 4px 40px 2px rgba(129, 129, 165, 0.07);
+    padding-right: 70px;
+  }
+
+  .row-owner,
+  .row-status,
+  .row-status-error,
+  .row-code,
+  .row-timestamp {
+    align-self: center;
+    text-align: start;
+    padding-left: 15px;
+    font-size: 13px;
+  }
+
+  .row-buttons {
+    visibility: hidden;
+  }
+}

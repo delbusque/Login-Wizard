@@ -57,3 +57,59 @@
 .head-owner {
   padding-left: 50px;
 }
+
+@media screen and (max-width: 375px) {
+  .title {
+    position: absolute;
+    width: 289px;
+    height: 30px;
+    left: 158px;
+    top: 100px;
+    font-weight: 600;
+    font-size: 21px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 375px;
+    left: 0px;
+    top: 154px;
+    box-sizing: border-box;
+    /* White- */
+    background: #ffffff;
+    /* Gray 5 */
+    border: 1px solid #e0e0e0;
+    box-shadow: 1px 4px 40px 2px rgba(129, 129, 165, 0.07);
+    border-radius: 10px;
+  }
+
+  .table-head-cont {
+    display: grid;
+    grid-template-columns: 160px 60px 60px 80px;
+    background: #f8f8f8;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 1px 4px 40px 2px rgba(129, 129, 165, 0.07);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-right: 70px;
+  }
+
+  .head-owner,
+  .head-status,
+  .head-code,
+  .head-timestamp {
+    align-self: center;
+    text-align: start;
+    padding-left: 15px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .head-owner {
+    padding-left: 15px;
+  }
+}
