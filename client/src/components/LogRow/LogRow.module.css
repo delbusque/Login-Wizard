@@ -1,0 +1,40 @@
+.table-row-cont {
+  display: grid;
+  grid-template-columns: 350px 130px 130px 240px 200px;
+  width: 1045px;
+  height: 40px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 1px 4px 40px 2px rgba(129, 129, 165, 0.07);
+  padding-right: 70px;
+}
+
+.row-owner,
+.row-status,
+.row-status-error,
+.row-code,
+.row-timestamp,
+.row-buttons {
+  align-self: center;
+  text-align: start;
+  padding-left: 30px;
+  font-size: 13px;
+}
+
+.row-status {
+  color: #3f8b35;
+}
+.row-status-error {
+  color: #e61e00;
+}
+
+.row-owner {
+  padding-left: 50px;
+}
+
+.row-buttons {
+  text-align: center;
+}
+
+.row-pencil {
+  margin-right: 15px;
+}
