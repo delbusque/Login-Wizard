@@ -17,7 +17,7 @@ const VerifyEmail = () => {
 
             <Card />
 
-            <img src={arrowLeft} alt='arrow' className={styles['card-arrow']} />
+            <Link to='/auth'><img src={arrowLeft} alt='arrow' className={styles['card-arrow']} /></Link>
 
             <h5 className={styles['desc']}>A 6-digit code has been sent to <span>youremail@emaildomain.com</span></h5>
 

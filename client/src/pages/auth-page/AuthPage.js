@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 import Header from '../../components/Header/Header';
 import styles from './AuthPage.module.css';
@@ -55,7 +55,7 @@ const AuthPage = () => {
             <div className={styles['card-progress']}></div>
             <div className={styles['progress']}></div>
 
-            <img src={arrowLeft} alt='arrow' className={styles['card-arrow']} />
+            <Link to='/'><img src={arrowLeft} alt='arrow' className={styles['card-arrow']} /></Link>
 
 
             <h4 className={styles['card-title']}>Enter your mobile no. and email</h4>

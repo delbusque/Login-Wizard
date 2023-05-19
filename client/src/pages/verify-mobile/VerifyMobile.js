@@ -17,7 +17,7 @@ const VerifyMobile = () => {
 
             <h3 className={styles['title']}>Verify your mobile number</h3>
 
-            <img src={arrowLeft} alt='arrow' className={styles['card-arrow']} />
+            <Link to='/auth'><img src={arrowLeft} alt='arrow' className={styles['card-arrow']} /></Link>
 
             <h5 className={styles['desc']}>A 6-digit code has been sent as a text messge to <span>+1 900-00-1234</span></h5>
 
