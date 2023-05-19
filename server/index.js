@@ -5,7 +5,6 @@ const session = require('express-session');
 const validator = require('validator');
 const crypto = require('crypto');
 
-const cookieParser = require('cookie-parser');
 const { getTimestamp } = require('./utils/getTimestamp.js')
 
 const app = express();
@@ -16,8 +15,6 @@ app.use(session({
     saveUninitialized: true,
     cookie: { secure: false }
 }))
-
-app.use(cookieParser());
 
 app.use(express.json());
 
