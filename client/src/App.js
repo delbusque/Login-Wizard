@@ -17,7 +17,6 @@ function App() {
   if (localStorageUser) {
     user = localStorageUser;
   }
-  console.log(user);
 
   return (
     <Routes>

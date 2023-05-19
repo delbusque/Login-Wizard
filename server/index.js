@@ -55,7 +55,7 @@ app.post('/verify-mobile', (req, res) => {
     const email = userSession.email;
     const mobileNo = userSession.mobileNo;
     const userCode = userSession.code;
-    const status = true;
+    const status = 'correct';
 
     const log = {
         timestamp,
@@ -66,7 +66,7 @@ app.post('/verify-mobile', (req, res) => {
     }
 
     if (code !== userSession.code) {
-        log.status = false
+        log.status = 'wrong';
         req.session.userSession.logs.push(log);
 
         return res.status(400).json({ mssg: 'Wrong code !' })
@@ -78,6 +78,11 @@ app.post('/verify-mobile', (req, res) => {
         user: userSession.email,
         mssg: 'Verification successful !'
     })
+})
+
+app.get('/logs', (req, res) => {
+    const { userSession } = req.session;
+    res.status(200).json({ userSession });
 })
 
 

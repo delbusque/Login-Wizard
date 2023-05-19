@@ -19,7 +19,6 @@
   flex-direction: column;
   position: absolute;
   width: 1045px;
-  height: 538px;
   left: 174px;
   top: 154px;
   box-sizing: border-box;
@@ -33,7 +32,7 @@
 
 .table-head-cont {
   display: grid;
-  grid-template-columns: 350px 150px 150px 200px 200px;
+  grid-template-columns: 350px 130px 130px 240px 200px;
   background: #f8f8f8;
   width: 1045px;
   height: 40px;
