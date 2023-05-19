@@ -11,8 +11,8 @@ const Card = () => {
     const verifyHandler = async (e) => {
         e.preventDefault();
 
-        if (!code || code.length < 6) {
-            setError('6-digit code needed !')
+        if (!code || code.length !== 6) {
+            setError('6-Digit code needed !')
             return;
         }
 
