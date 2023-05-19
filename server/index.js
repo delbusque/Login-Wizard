@@ -2,12 +2,11 @@ require('dotenv').config();
 
 const express = require('express');
 const session = require('express-session');
-const mongoose = require('mongoose');
 const validator = require('validator');
 const crypto = require('crypto');
 
 const cookieParser = require('cookie-parser');
-const { log } = require('console');
+const { getTimestamp } = require('./utils/getTimestamp.js')
 
 const app = express();
 
@@ -22,23 +21,13 @@ app.use(cookieParser());
 
 app.use(express.json());
 
-app.post('/verify-mobile', (req, res) => {
-    const { code } = req.body;
-    const { userSession } = req.session;
-
-    if (code !== userSession.code) {
-        return res.status(400).json({ mssg: 'Wrong code !' })
-    }
-
-    return res.status(200).json({
-        user: userSession.email,
-        mssg: 'Verification successful !'
-    })
-})
-
-
 app.post('/auth', (req, res) => {
     const { mobileNo, email } = req.body;
+    let logs = [];
+
+    if (req.session.userSession) {
+        req.session.userSession.logs.forEach(log => logs.push(log));
+    }
 
     if (!mobileNo || !email) {
         return res.status(401).json({ mssg: 'You must provide Mobile no. and Email !' })
@@ -48,20 +37,48 @@ app.post('/auth', (req, res) => {
         return res.status(401).json({ mssg: 'Invalid email format !' })
     }
 
-    // if (userSessions[email]) {
-    //     res.status(400).send('User with that email already exists !')
-    // }
-
     crypto.randomBytes(3, function (err, buffer) {
         const code = parseInt(buffer.toString('hex'), 16).toString().substr(0, 6);
 
-        req.session.userSession = { email, mobileNo, code };
+        req.session.userSession = { email, mobileNo, code, logs };
 
         res.status(200).json({ code });
     });
 })
 
 
+app.post('/verify-mobile', (req, res) => {
+    const { code } = req.body;
+    const { userSession } = req.session;
+
+    const timestamp = getTimestamp();
+    const email = userSession.email;
+    const mobileNo = userSession.mobileNo;
+    const userCode = userSession.code;
+    const status = true;
+
+    const log = {
+        timestamp,
+        email,
+        mobileNo,
+        userCode,
+        status,
+    }
+
+    if (code !== userSession.code) {
+        log.status = false
+        req.session.userSession.logs.push(log);
+
+        return res.status(400).json({ mssg: 'Wrong code !' })
+    }
+
+    req.session.userSession.logs.push(log);
+
+    return res.status(200).json({
+        user: userSession.email,
+        mssg: 'Verification successful !'
+    })
+})
 
 
 app.listen(process.env.PORT, () => {
