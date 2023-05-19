@@ -6,6 +6,8 @@ import AuthPage from './pages/auth-page/AuthPage';
 import VerifyMobile from './pages/verify-mobile/VerifyMobile';
 import VerifyEmail from './pages/verify-email/VerifyEmail';
 import VerificationSuccess from './pages/verification-success/VerificationSuccess';
+import LogTable from './pages/logs-table/LogsTable'
+
 
 function App() {
 
@@ -24,6 +26,8 @@ function App() {
       <Route path='/verify-mobile' element={<VerifyMobile />} />
       <Route path='/verify-email' element={<VerifyEmail />} />
       <Route path='/success' element={user ? <VerificationSuccess /> : <Navigate to='/' />} />
+      <Route path='/logs' element={user ? <LogTable /> : <Navigate to='/' />} />
+
     </Routes>
   );
 }
