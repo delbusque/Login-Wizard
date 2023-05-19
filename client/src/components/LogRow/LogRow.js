@@ -6,7 +6,7 @@ const LogRow = ({ log }) => {
 
             <div className={styles['row-owner']}>{log.email}</div>
 
-            {log.status === 'correct' ?
+            {log.status === 'success' ?
                 <div className={styles['row-status']}>{log.status}</div> :
                 <div className={styles['row-status-error']}>{log.status}</div>
             }
