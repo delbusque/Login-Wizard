@@ -7,7 +7,7 @@ const VerificationSuccess = () => {
     return (
         <SiteWrappper>
             <Header />
-            <h3 className={styles['title']}>Verify your mobile number.</h3>
+            <h3 className={styles['title']}>Verification successful!</h3>
 
             <div className={styles['card']}></div>
             <div className={styles['card-progress']}></div>
