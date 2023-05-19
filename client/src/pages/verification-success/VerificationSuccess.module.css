@@ -1,76 +1,137 @@
 .title {
-    position: absolute;
-    width: 312px;
-    height: 34px;
-    left: 564px;
-    top: 100px;
-
-    /* H3 / Bold */
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 140.62%;
-    /* identical to box height, or 34px */
-
-
-    color: #000000;
+  position: absolute;
+  width: 312px;
+  height: 34px;
+  left: 564px;
+  top: 100px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 140.62%;
+  color: #000000;
 }
 
 .card {
-    position: absolute;
-    width: 495px;
-    height: 421px;
-    left: 473px;
-    top: 154px;
-    background: #FFFFFF;
-    border: 1px solid #E0E0E0;
-    box-shadow: 1px 4px 40px 2px rgba(129, 129, 165, 0.07);
-    border-radius: 10px;
+  position: absolute;
+  width: 495px;
+  height: 421px;
+  left: 473px;
+  top: 154px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 1px 4px 40px 2px rgba(129, 129, 165, 0.07);
+  border-radius: 10px;
 }
 
 .card-progress {
-    position: absolute;
-    width: 495px;
-    height: 7px;
-    left: 473px;
-    top: 154px;
-    background: #E0E0E0;
-    border-radius: 10px;
+  position: absolute;
+  width: 495px;
+  height: 7px;
+  left: 473px;
+  top: 154px;
+  background: #e0e0e0;
+  border-radius: 10px;
 }
 
 .progress {
-    position: absolute;
-    height: 7px;
-    width: 81px;
-    left: 474px;
-    top: 154px;
-    border-radius: 10px;
-    background: #6D2BC1;
+  position: absolute;
+  height: 7px;
+  width: 81px;
+  left: 474px;
+  top: 154px;
+  border-radius: 10px;
+  background: #6d2bc1;
 }
 
 .status-text {
-    position: absolute;
-    width: 229px;
-    height: 32px;
-    left: 606px;
-    top: 389px;
-    /* H4 / Regular */
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 150%;
-    /* identical to box height, or 32px */
-    text-align: center;
-    color: #000000;
+  position: absolute;
+  width: 229px;
+  height: 32px;
+  left: 606px;
+  top: 389px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  text-align: center;
+  color: #000000;
 }
 
 .success-img {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  left: 683px;
+  top: 294px;
+}
+
+@media screen and (max-width: 375px) {
+  .title {
     position: absolute;
-    width: 75px;
-    height: 75px;
-    left: 683px;
-    top: 294px;
+    width: 289px;
+    height: 30px;
+    left: 68px;
+    top: 115px;
+
+    /* H4 / Bold */
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 140.62%;
+    /* identical to box height, or 30px */
+
+    color: #000000;
+  }
+
+  .card {
+    position: absolute;
+    width: 375px;
+    height: 341px;
+    left: 0px;
+    top: 165px;
+  }
+
+  .card-progress {
+    position: absolute;
+    width: 375px;
+    height: 7px;
+    left: 0px;
+    top: 165px;
+  }
+
+  .progress {
+    position: absolute;
+    height: 7px;
+    width: 81px;
+    left: 0px;
+    top: 165px;
+    border-radius: 10px;
+    background: #6d2bc1;
+  }
+
+  .success-img {
+    position: absolute;
+    width: 79px;
+    height: 79px;
+    left: 148px;
+    top: 282px;
+  }
+
+  .status-text {
+    position: absolute;
+    width: 229px;
+    height: 32px;
+    left: 73px;
+    top: 381px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    text-align: center;
+    color: #000000;
+  }
 }
