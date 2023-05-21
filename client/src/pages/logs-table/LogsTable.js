@@ -18,8 +18,6 @@ const LogsTable = () => {
 
     }, []);
 
-    console.log(logs);
-
     return (
         <SiteWrappper>
             <Header />
@@ -34,7 +32,8 @@ const LogsTable = () => {
                     <div className={styles['head-timestamp']}>timestamp</div>
                 </div>
 
-                {logs && logs.map(log => <LogRow key={log.timestamp} log={log} />)}
+                {logs && logs.map(log => <LogRow key={log.timestamp}
+                    log={log} logs={logs} setLogs={setLogs} />)}
             </div>
         </SiteWrappper>
     )

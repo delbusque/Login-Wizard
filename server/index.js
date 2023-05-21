@@ -82,7 +82,21 @@ app.post('/verify-mobile', (req, res) => {
 
 app.get('/logs', (req, res) => {
     const { userSession } = req.session;
+    console.log(req.session.userSession);
+
     res.status(200).json({ userSession });
+})
+
+app.put('/logs', (req, res) => {
+    const { userSession } = req.session;
+    const { logId } = req.body;
+
+    const filteredLogs = userSession.logs.filter(l => l.id !== logId);
+
+    req.session.reload(() => {
+        req.session.userSession.logs = filteredLogs;
+        res.status(200).json({ mssg: 'Session reloaded !' })
+    });
 })
 
 
