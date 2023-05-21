@@ -23,6 +23,7 @@
 .row-status {
   color: #3f8b35;
 }
+
 .row-status-error {
   color: #e61e00;
 }
@@ -37,6 +38,11 @@
 
 .row-pencil {
   margin-right: 15px;
+}
+
+.row-pencil,
+.row-trash {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 375px) {
