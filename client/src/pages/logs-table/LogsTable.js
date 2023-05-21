@@ -6,22 +6,24 @@ import styles from './LogsTable.module.css';
 
 const LogsTable = () => {
 
-    const [session, setSession] = useState([]);
-
-    const fetchSession = async () => {
-        const response = await fetch('/logs');
-        const result = await response.json();
-        setSession(result.userSession.logs);
-    }
+    const [logs, setLogs] = useState([]);
 
     useEffect(() => {
-        fetchSession();
-    }, [])
+
+        const loggings = () => fetch('/logs').then(res => res.json()).then(data => {
+            setLogs(data.userSession.logs);
+        });
+
+        loggings();
+
+    }, []);
+
+    console.log(logs);
 
     return (
         <SiteWrappper>
             <Header />
-            <h3 className={styles['title']}>Loggs</h3>
+            <h3 className={styles['title']}>Logs</h3>
 
             <div className={styles['card']}>
 
@@ -32,13 +34,8 @@ const LogsTable = () => {
                     <div className={styles['head-timestamp']}>timestamp</div>
                 </div>
 
-                {session && session.map(log => <LogRow key={log.timestamp} log={log} />)}
+                {logs && logs.map(log => <LogRow key={log.timestamp} log={log} />)}
             </div>
-
-
-
-
-
         </SiteWrappper>
     )
 }
