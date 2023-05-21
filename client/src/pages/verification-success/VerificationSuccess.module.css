@@ -66,6 +66,12 @@
   top: 294px;
 }
 
+.success-arrow {
+  position: absolute;
+  right: 505px;
+  top: 505px;
+}
+
 @media screen and (max-width: 375px) {
   .title {
     position: absolute;
