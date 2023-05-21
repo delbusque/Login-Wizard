@@ -4,6 +4,7 @@ const express = require('express');
 const session = require('express-session');
 const validator = require('validator');
 const crypto = require('crypto');
+const uniqid = require('uniqid');
 
 const { getTimestamp } = require('./utils/getTimestamp.js')
 
@@ -53,8 +54,10 @@ app.post('/verify-mobile', (req, res) => {
     const mobileNo = userSession.mobileNo;
     const userCode = userSession.code;
     const status = 'success';
+    const id = uniqid();
 
     const log = {
+        id,
         timestamp,
         email,
         mobileNo,
