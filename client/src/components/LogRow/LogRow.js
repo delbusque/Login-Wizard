@@ -42,9 +42,7 @@ const LogRow = ({ log, logs, setLogs }) => {
                 log.email = editedEmail;
                 log.status = editedStatus;
                 setError('');
-                console.log(data);
             })
-
     }
 
     const deleteHandler = () => {
@@ -70,9 +68,7 @@ const LogRow = ({ log, logs, setLogs }) => {
             .then(data => {
                 if (data.status) {
                     setLogs(newLogs);
-
                 }
-                console.log(data)
             })
     }
 
@@ -116,7 +112,6 @@ const LogRow = ({ log, logs, setLogs }) => {
                         <span className={styles['row-save']} onClick={saveEdit}><i className="fa-solid fa-floppy-disk"></i></span>
                     </>
                     }
-
 
                     {onDelete && <>
                         <span className={styles['row-pencil']} onClick={cancelDelete}><i className="fa-solid fa-xmark"></i></span>
