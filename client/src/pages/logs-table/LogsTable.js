@@ -23,7 +23,7 @@ const LogsTable = () => {
             <Header />
             <h3 className={styles['title']}>Logs</h3>
 
-            <div className={styles['card']}>
+            {logs.length > 0 ? <div className={styles['card']}>
 
                 <div className={styles['table-head-cont']}>
                     <div className={styles['head-owner']}>user</div>
@@ -34,7 +34,8 @@ const LogsTable = () => {
 
                 {logs && logs.map(log => <LogRow key={log.timestamp}
                     log={log} logs={logs} setLogs={setLogs} />)}
-            </div>
+
+            </div> : <div className={styles['no-logs']}>No logs here :)</div>}
         </SiteWrappper>
     )
 }
