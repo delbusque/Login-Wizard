@@ -79,16 +79,11 @@
     height: 30px;
     left: 68px;
     top: 115px;
-
-    /* H4 / Bold */
-
     font-family: "Inter";
     font-style: normal;
     font-weight: 600;
     font-size: 21px;
     line-height: 140.62%;
-    /* identical to box height, or 30px */
-
     color: #000000;
   }
 
@@ -126,6 +121,14 @@
     top: 282px;
   }
 
+  .success-arrow {
+    position: absolute;
+    right: 15px;
+    top: 460px;
+    width: 30px;
+    height: 30px;
+  }
+
   .status-text {
     position: absolute;
     width: 229px;
@@ -139,5 +142,6 @@
     line-height: 150%;
     text-align: center;
     color: #000000;
+    display: flex;
   }
 }
