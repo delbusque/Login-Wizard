@@ -39,7 +39,7 @@ const AuthPage = () => {
             setIsError(true);
             setIsValidMobile(true);
             setIsValidEmail(true);
-            console.log(result.errMssgs);
+
             if (result.errMssgs.find(mssg => mssg === 'Invalid mobile number format !')) setIsValidMobile(false);
             if (result.errMssgs.find(mssg => mssg === 'Invalid email format !')) setIsValidEmail(false);
 
