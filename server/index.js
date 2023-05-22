@@ -99,6 +99,20 @@ app.put('/logs', (req, res) => {
     });
 })
 
+app.put('/edit-log', (req, res) => {
+    const { userSession } = req.session;
+    const { email, status, logId, log } = req.body;
+
+    const filteredLogs = userSession.logs.filter(l => l.id !== logId);
+    const editedLog = { ...log, email, status };
+
+    req.session.reload(() => {
+        req.session.userSession.logs = filteredLogs;
+        req.session.userSession.logs.push(editedLog);
+        res.status(200).json({ mssg: 'Session reloaded !' })
+    });
+})
+
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is listening for requests on port ${process.env.PORT}...`)
