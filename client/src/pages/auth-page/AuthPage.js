@@ -15,6 +15,7 @@ const AuthPage = () => {
     const [email, setEmail] = useState('');
     const [isError, setIsError] = useState(false);
     const [isValidEmail, setIsValidEmail] = useState(true);
+    const [isValidMobile, setIsValidMobile] = useState(true);
 
     const submitHandler = async (e) => {
         e.preventDefault();
@@ -36,7 +37,12 @@ const AuthPage = () => {
 
         if (!response.ok) {
             setIsError(true);
-            if (result.mssg === 'Invalid email format !') setIsValidEmail(false);
+            setIsValidMobile(true);
+            setIsValidEmail(true);
+            console.log(result.errMssgs);
+            if (result.errMssgs.find(mssg => mssg === 'Invalid mobile number format !')) setIsValidMobile(false);
+            if (result.errMssgs.find(mssg => mssg === 'Invalid email format !')) setIsValidEmail(false);
+
             return;
         }
 
@@ -68,7 +74,7 @@ const AuthPage = () => {
             <form className={styles['card-form']} onSubmit={submitHandler}>
 
                 <label className={styles['label-mobile']}>Mobile no.</label>
-                <input className={(isError && !mobileNo) ? styles['input-mobile-error'] : styles['input-mobile']} placeholder='Enter your mobile no.'
+                <input className={(isError && !mobileNo) || (!isValidMobile) ? styles['input-mobile-error'] : styles['input-mobile']} placeholder='Enter your mobile no.'
                     onChange={(e) => setMobileNo(e.target.value)} value={mobileNo}></input>
 
                 <label className={styles['label-email']}>Email Address</label>
