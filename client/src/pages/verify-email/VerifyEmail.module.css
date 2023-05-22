@@ -59,14 +59,11 @@
     height: 26px;
     left: 580px;
     top: 616px;
-    /* Body Text / Default / Bold */
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
     line-height: 160%;
-    /* identical to box height, or 26px */
-    /* Primary 1 */
     color: #6D2BC1;
 }
 

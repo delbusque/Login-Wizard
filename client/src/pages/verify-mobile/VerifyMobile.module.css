@@ -4,13 +4,11 @@
     height: 34px;
     left: 567px;
     top: 100px;
-    /* H3 / Bold */
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
     line-height: 140.62%;
-    /* identical to box height, or 34px */
     color: #000000;
 }
 
@@ -20,18 +18,12 @@
     height: 56px;
     left: 564px;
     top: 176px;
-
-    /* H5 / Regular */
-
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 155%;
-    /* or 28px */
-
     text-align: center;
-
     color: #000000;
 }
 
@@ -136,5 +128,4 @@
         line-height: 160%;
         color: #6D2BC1;
     }
-
 }
