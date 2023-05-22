@@ -75,7 +75,7 @@ app.post('/verify-code', (req, res) => {
     }
 
     if (code !== userSession.code) {
-        log.status = 'wrong code';
+        log.status = 'failure';
         req.session.userSession.logs.push(log);
 
         return res.status(400).json({ mssg: 'Wrong code !' })
