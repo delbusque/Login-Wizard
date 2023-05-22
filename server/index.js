@@ -54,7 +54,7 @@ app.post('/auth', (req, res) => {
 })
 
 
-app.post('/verify-mobile', (req, res) => {
+app.post('/verify-code', (req, res) => {
     const { code } = req.body;
     const { userSession } = req.session;
 

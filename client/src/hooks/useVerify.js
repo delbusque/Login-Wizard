@@ -13,7 +13,7 @@ export const useVerify = () => {
 
         console.log(code);
 
-        const response = await fetch('/verify-mobile', {
+        const response = await fetch('/verify-code', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
