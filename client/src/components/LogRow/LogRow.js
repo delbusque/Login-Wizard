@@ -18,7 +18,12 @@ const LogRow = ({ log, logs, setLogs }) => {
         if (onEdit) setOnEdit(false);
     }
 
-    const saveEditHandler = () => {
+    const cancelEdit = () => {
+        if (onEdit) setOnEdit(false);
+        if (!onEdit) setOnEdit(true);
+    }
+
+    const saveEdit = () => {
 
         if (!validator.isEmail(editedEmail)) {
             return setError('Please, provide valid email !')
@@ -98,7 +103,11 @@ const LogRow = ({ log, logs, setLogs }) => {
                         <span className={styles['row-trash']} onClick={deleteHandler}><i className="fa-solid fa-trash"></i></span></>
                     }
 
-                    {onEdit && <span className={styles['row-save']} onClick={saveEditHandler}><i className="fa-solid fa-floppy-disk"></i></span>}
+                    {onEdit && <>
+                        <span className={styles['row-pencil']} onClick={cancelEdit}><i className="fa-solid fa-xmark"></i></span>
+                        <span className={styles['row-save']} onClick={saveEdit}><i className="fa-solid fa-floppy-disk"></i></span>
+                    </>
+                    }
 
 
                     {onDelete && <>
