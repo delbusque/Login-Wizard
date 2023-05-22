@@ -22,17 +22,26 @@ app.use(express.json());
 app.post('/auth', (req, res) => {
     const { mobileNo, email } = req.body;
     let logs = [];
+    let errMssgs = [];
 
     if (req.session.userSession) {
         req.session.userSession.logs.forEach(log => logs.push(log));
     }
 
     if (!mobileNo || !email) {
-        return res.status(401).json({ mssg: 'You must provide Mobile no. and Email !' })
+        errMssgs.push('You must provide Mobile no. and Email !')
+    }
+
+    if (!validator.isMobilePhone(mobileNo)) {
+        errMssgs.push('Invalid mobile number format !')
     }
 
     if (!validator.isEmail(email)) {
-        return res.status(401).json({ mssg: 'Invalid email format !' })
+        errMssgs.push('Invalid email format !')
+    }
+
+    if (errMssgs.length > 0) {
+        return res.status(401).json({ errMssgs })
     }
 
     crypto.randomBytes(3, function (err, buffer) {
