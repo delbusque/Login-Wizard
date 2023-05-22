@@ -1,10 +1,11 @@
 import styles from './LogRow.module.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import validator from 'validator';
 
 const LogRow = ({ log, logs, setLogs }) => {
 
     const [onEdit, setOnEdit] = useState(false);
+    const [onDelete, setOnDelete] = useState(false);
     const [editedEmail, setEditedEmail] = useState('');
     const [editedStatus, setEditedStatus] = useState('');
     const [error, setError] = useState('');
@@ -40,6 +41,16 @@ const LogRow = ({ log, logs, setLogs }) => {
     }
 
     const deleteHandler = () => {
+        if (!onDelete) setOnDelete(true);
+        if (onDelete) setOnDelete(false);
+    }
+
+    const cancelDelete = () => {
+        if (onDelete) setOnDelete(false);
+        if (!onDelete) setOnDelete(true);
+    }
+
+    const confirmDelete = () => {
         const newLogs = logs.filter(l => l.id !== log.id);
         setLogs(newLogs)
         fetch('/logs', {
@@ -50,6 +61,8 @@ const LogRow = ({ log, logs, setLogs }) => {
             body: JSON.stringify({ logId: log.id })
         })
     }
+
+
 
     return (
         <>
@@ -63,7 +76,6 @@ const LogRow = ({ log, logs, setLogs }) => {
                     <input className={styles['row-owner-edit']}
                         value={editedEmail}
                         onChange={(e) => setEditedEmail(e.target.value)}
-                        onBlur={(e) => setOnEdit(true)}
                     />
                 }
 
@@ -72,7 +84,6 @@ const LogRow = ({ log, logs, setLogs }) => {
                     <input className={styles['row-status-edit']}
                         value={editedStatus}
                         onChange={(e) => setEditedStatus(e.target.value)}
-                        onBlur={(e) => setOnEdit(true)}
                     />
                 }
 
@@ -80,16 +91,21 @@ const LogRow = ({ log, logs, setLogs }) => {
 
                 <div className={styles['row-timestamp']}>{log.timestamp}</div>
 
-
                 <div className={styles['row-buttons']}>
 
-                    {!onEdit && <>
+                    {(!onEdit && !onDelete) && <>
                         <span className={styles['row-pencil']} onClick={editHandler}><i className="fa-solid fa-pencil"></i></span>
                         <span className={styles['row-trash']} onClick={deleteHandler}><i className="fa-solid fa-trash"></i></span></>
                     }
 
                     {onEdit && <span className={styles['row-save']} onClick={saveEditHandler}><i className="fa-solid fa-floppy-disk"></i></span>}
 
+
+                    {onDelete && <>
+                        <span className={styles['row-pencil']} onClick={cancelDelete}><i className="fa-solid fa-xmark"></i></span>
+                        <span className={styles['row-trash']} onClick={confirmDelete}><i className="fa-solid fa-trash-arrow-up"></i></span>
+                    </>
+                    }
 
                 </div>
             </div>
