@@ -35,13 +35,15 @@ const LogRow = ({ log, logs, setLogs }) => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ email: editedEmail, status: editedStatus, logId: log.id, log })
-        }).then(() => {
-            if (!onEdit) setOnEdit(true);
-            if (onEdit) setOnEdit(false);
-            log.email = editedEmail;
-            log.status = editedStatus;
-            setError('');
-        })
+        }).then(res => res.json())
+            .then(data => {
+                if (!onEdit) setOnEdit(true);
+                if (onEdit) setOnEdit(false);
+                log.email = editedEmail;
+                log.status = editedStatus;
+                setError('');
+                console.log(data);
+            })
 
     }
 
@@ -57,17 +59,22 @@ const LogRow = ({ log, logs, setLogs }) => {
 
     const confirmDelete = () => {
         const newLogs = logs.filter(l => l.id !== log.id);
-        setLogs(newLogs)
-        fetch('/logs', {
+
+        fetch('/delete-log', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ logId: log.id })
-        })
+        }).then(res => res.json())
+            .then(data => {
+                if (data.status) {
+                    setLogs(newLogs);
+
+                }
+                console.log(data)
+            })
     }
-
-
 
     return (
         <>
@@ -89,7 +96,7 @@ const LogRow = ({ log, logs, setLogs }) => {
                     <input className={styles['row-status-edit']}
                         value={editedStatus}
                         onChange={(e) => setEditedStatus(e.target.value)}
-                        maxlength="7"
+                        maxLength="7"
                     />
                 }
 

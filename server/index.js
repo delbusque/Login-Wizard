@@ -96,16 +96,21 @@ app.get('/logs', (req, res) => {
     res.status(200).json({ userSession });
 })
 
-app.put('/logs', (req, res) => {
+app.put('/delete-log', (req, res) => {
     const { userSession } = req.session;
     const { logId } = req.body;
 
-    const filteredLogs = userSession.logs.filter(l => l.id !== logId);
+    try {
+        const filteredLogs = userSession.logs.filter(l => l.id !== logId);
 
-    req.session.reload(() => {
-        req.session.userSession.logs = filteredLogs;
-        res.status(200).json({ mssg: 'Session reloaded !' })
-    });
+        req.session.reload(() => {
+            req.session.userSession.logs = filteredLogs;
+            res.status(200).json({ mssg: `Log ${logId} deleted !`, status: true })
+        });
+    } catch (error) {
+        res.status(400).json({ error: error.message })
+    }
+
 })
 
 app.put('/edit-log', (req, res) => {
@@ -115,11 +120,15 @@ app.put('/edit-log', (req, res) => {
     const filteredLogs = userSession.logs.filter(l => l.id !== logId);
     const editedLog = { ...log, email, status };
 
-    req.session.reload(() => {
-        req.session.userSession.logs = filteredLogs;
-        req.session.userSession.logs.push(editedLog);
-        res.status(200).json({ mssg: 'Session reloaded !' })
-    });
+    try {
+        req.session.reload(() => {
+            req.session.userSession.logs = filteredLogs;
+            req.session.userSession.logs.push(editedLog);
+            res.status(200).json({ mssg: `Log ${editedLog.id} edited !` })
+        });
+    } catch (error) {
+        res.status(400).json({ error: error.message })
+    }
 })
 
 
