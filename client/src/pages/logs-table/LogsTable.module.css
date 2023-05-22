@@ -4,12 +4,10 @@
   height: 34px;
   left: 647px;
   top: 100px;
-  /* H3 / Bold */
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
   line-height: 140.62%;
-  /* identical to box height, or 34px */
   color: #000000;
 }
 
@@ -19,7 +17,6 @@
   height: 34px;
   left: 631px;
   top: 180px;
-  /* H3 / Bold */
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -33,9 +30,7 @@
   left: 174px;
   top: 154px;
   box-sizing: border-box;
-  /* White- */
   background: #ffffff;
-  /* Gray 5 */
   border: 1px solid #e0e0e0;
   box-shadow: 1px 4px 40px 2px rgba(129, 129, 165, 0.07);
   border-top-left-radius: 10px;
@@ -99,7 +94,7 @@
 
   .table-head-cont {
     display: grid;
-    grid-template-columns: 160px 60px 60px 80px;
+    grid-template-columns: 120px 60px 60px 80px 40px;
     background: #f8f8f8;
     width: 100%;
     height: 40px;

@@ -89,6 +89,7 @@ const LogRow = ({ log, logs, setLogs }) => {
                     <input className={styles['row-status-edit']}
                         value={editedStatus}
                         onChange={(e) => setEditedStatus(e.target.value)}
+                        maxlength="7"
                     />
                 }
 

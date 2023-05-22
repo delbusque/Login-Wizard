@@ -76,7 +76,7 @@
 @media screen and (max-width: 375px) {
   .table-row-cont {
     display: grid;
-    grid-template-columns: 160px 60px 60px 80px;
+    grid-template-columns: 120px 60px 60px 80px 40px;
     width: 375px;
     height: 87px;
     border: 1px solid #e0e0e0;
@@ -93,9 +93,44 @@
     text-align: start;
     padding-left: 15px;
     font-size: 13px;
+    text-overflow: hidden;
+  }
+
+  .row-owner {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .row-owner-edit {
+    align-self: center;
+    text-align: start;
+    margin-left: 10px;
+    padding-left: 8px;
+    font-size: 13px;
+    background: #ffe3a7;
+    width: 110px;
+    border-radius: 4px;
+  }
+
+  .row-status-edit {
+    align-self: center;
+    text-align: start;
+    margin-left: 10px;
+    padding-left: 8px;
+    font-size: 13px;
+    background: #ffe3a7;
+    width: 65px;
+    border-radius: 4px;
   }
 
   .row-buttons {
-    visibility: hidden;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
   }
+
+  .row-pencil {
+    margin-right: 0px;
+  }
+
 }
